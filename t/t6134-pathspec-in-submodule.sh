@@ -24,13 +24,8 @@ test_expect_success 'error message for path inside submodule' '
 	test_i18ncmp expect actual
 '
 
-cat <<EOF >expect
-fatal: Pathspec '.' is in submodule 'sub'
-EOF
-
 test_expect_success 'error message for path inside submodule from within submodule' '
 	test_must_fail git -C sub add . 2>actual &&
-	test_i18ncmp expect actual
 '
 
 test_done
